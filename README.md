@@ -61,4 +61,50 @@ Cuối cùng ta được bảng dữ liệu thông tin sinh viên TNUT như sau:
 
 ## 8. nhập sql để tìm xem có những sv nào có sđt sai khác chỉ 1 số so với sđt của em.
 
+![image](https://github.com/user-attachments/assets/fe532f20-cb93-4393-a714-866c61db4050)
 
+## 9. BẢNG SV CÓ HƠN 9000 ROWS, HÃY LIỆT KÊ TẤT CẢ CÁC SV NGÀNH KMT, SẮP XẾP THEO TÊN VÀ HỌ ĐỆM, KIỂU TIẾNG  VIỆT, GIẢI THÍCH.
+
+![image](https://github.com/user-attachments/assets/09b5fd04-8040-4203-90c5-ff4fb3a72007)
+
+**Select**: lấy dữ liệu ở các cột tại bảng SV
+
+**FROM SV**: Chỉ định bảng dữ liệu cần truy vấn là bảng SV
+
+**WHERE lop LIKE '%KMT%'**: điều kiện lọc dữ liệu, lop là cột chứa thông tin lớp học của sinh viên.
+
+**LIKE '%KMT%'**: Tìm tất cả các bản ghi mà cột lop chứa chuỗi 'KMT' ở bất kỳ vị trí nào trong chuỗi giá trị của nó.
+
+**%** là ký tự đại diện cho bất kỳ chuỗi ký tự nào hoặc chuỗi rỗng.
+
+**ORDER BY ten, hodem**: Xắp xếp kết quả trả về theo-Cột tên trước (theo thứ tự từ A → Z)
+
+Nếu các giá trị Tên giống nhau, tiếp tục sắp xếp theo hodem (cũng từ A → Z)
+
+## 10. HÃY NHẬP SQL ĐỂ LIỆT KÊ CÁC SV NỮ NGÀNH KMT CÓ TRONG BẢNG SV (TRÌNH BÀY QUÁ TRÌNH SUY NGHĨ VÀ GIẢI NHỮNG VỨNG MẮC).
+
+Theo em các bạn nữ thì thường có họ tên đệm đa số là chữ **Thị** lên em tìm những bạn có tên đệm chữ thị là giả dụ bạn ấy là nữ và học ngành **KMT** .
+
+![image](https://github.com/user-attachments/assets/350a91a0-5cf1-4ebb-ad46-bf2e07c5a5a2)
+
+**WHERE [hodem] LIKE N'%Thị%'** 
+
+ **WHERE** là điều kiện lọc, chỉ chọn những bản ghi thỏa mãn điều kiện này.
+
+**hodem**: Cột này trong bảng **SV** lưu trữ thông tin về họ và đệm của sinh viên.
+
+**LIKE**: Là toán tử dùng để tìm kiếm một mẫu chuỗi trong một cột. Cho phép tìm kiếm một phần của chuỗi, thay vì phải khớp chính xác toàn bộ chuỗi.
+
+**N**: Là tiền tố trong SQL Server để biểu thị rằng chuỗi ký tự sau đó là kiểu nvarchar.
+
+**'%Thị%'**: Đây là mẫu chuỗi mà em đang tìm kiếm trong cột **[hodem]**. Dấu phần trăm % là ký hiệu đại diện cho bất kỳ chuỗi ký tự nào (bao gồm chuỗi rỗng).
+
+**AND [lop] LIKE N'%KMT%'**
+
+**AND**: Đây là toán tử logic dùng để kết hợp các điều kiện trong câu truy vấn. Trong trường hợp này, bạn chỉ chọn những sinh viên có hodem chứa "Thị" và lop chứa "KMT".
+
+**[lop]**: Cột này lưu trữ thông tin về mã lớp của sinh viên.
+
+**LIKE**: được sử dụng để tìm kiếm một mẫu chuỗi trong cột [lop]
+
+**N'%KMT%'**: Mẫu chuỗi này tìm kiếm tất cả các lớp mà chứa từ **KMT**.
